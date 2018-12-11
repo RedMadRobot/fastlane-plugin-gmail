@@ -15,11 +15,11 @@ fastlane add_plugin gmail
 Send mail from gmail.
 
 Authentication options:
-- Username and password - specify options RMR_GMAIL_USERNAME and RMR_GMAIL_PASSWORD.<br>
+- Username and password - specify options FL_GMAIL_USERNAME and FL_GMAIL_PASSWORD.<br>
 [G Suite](https://support.google.com/a/answer/176600?hl=en) documentation, see Gmail SMTP server.
 > if you use two-factor authentication, create a password for the application. [Sign in using App Passwords](https://support.google.com/accounts/answer/185833?hl=en)
 
-- Auth by IP for G Suite accounts. You should configure your G Suite account and specify option RMR_GMAIL_DOMAIN.<br>
+- Auth by IP for G Suite accounts. You should configure your G Suite account and specify option FL_GMAIL_DOMAIN.<br>
 See documentation [SMTP relay](https://support.google.com/a/answer/2956491?hl=en).
 
 
