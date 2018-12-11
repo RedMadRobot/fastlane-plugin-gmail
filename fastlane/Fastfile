@@ -1,0 +1,9 @@
+lane :test do
+  gmail(
+    username: "user@gmail.com",
+    password: "123",
+    to: ["aaa@gmail.com", "bbb@gmail.com"],
+    subject: "New release",
+    body: "issues ..."
+  )
+end
