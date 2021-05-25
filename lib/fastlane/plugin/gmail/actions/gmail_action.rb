@@ -81,7 +81,7 @@ module Fastlane
                                        verify_block: proc do |value|
                                          UI.user_error!("No recipients") if value.to_s.length == 0
                                        end),
-          FastlaneCore::ConfigItem.new(key: :to,
+          FastlaneCore::ConfigItem.new(key: :cc,
                                        env_name: "FL_GMAIL_CC",
                                        description: "Mail cc recipients",
                                        sensitive: true,
