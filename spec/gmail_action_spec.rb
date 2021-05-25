@@ -17,6 +17,7 @@ describe Fastlane::Actions::GmailAction do
       username: @username,
       password: @password,
       to:       @to,
+      cc:       @cc,
       subject:  @subject,
       body:     @body
     }
@@ -35,6 +36,7 @@ describe Fastlane::Actions::GmailAction do
       expect(Mail::TestMailer.deliveries.count).to eql(1)
       expect(Mail::TestMailer.deliveries[0].from).to eql([@username])
       expect(Mail::TestMailer.deliveries[0].to).to eql([@to])
+      expect(Mail::TestMailer.deliveries[0].cc).to eql([@cc])
       expect(Mail::TestMailer.deliveries[0].subject).to eql(@subject)
       expect(Mail::TestMailer.deliveries[0].body.parts[0].body.raw_source).to eql(@body)
     end
@@ -47,6 +49,7 @@ describe Fastlane::Actions::GmailAction do
           gmail({
             password: '#{@password}',
             to:       '#{@to}',
+            cc:       '#{@cc}',
             subject:  '#{@subject}',
             body:     '#{@body}'
           })
@@ -74,6 +77,7 @@ describe Fastlane::Actions::GmailAction do
             username: '#{@username}',
             password: '#{@password}',
             to:       '#{@to}',
+            cc:       '#{@cc}',
             body:     '#{@body}'
           })
         end").runner.execute(:test)
@@ -87,6 +91,7 @@ describe Fastlane::Actions::GmailAction do
             username: '#{@username}',
             password: '#{@password}',
             to:       '#{@to}',
+            cc:       '#{@cc}',
             subject:  '#{@subject}'
           })
         end").runner.execute(:test)
