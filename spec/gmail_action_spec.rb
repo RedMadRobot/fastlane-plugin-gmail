@@ -3,6 +3,7 @@ describe Fastlane::Actions::GmailAction do
     @username = 'user_name'
     @password = '1234'
     @to = 'recipients'
+    @cc = 'cc_recipients'
     @subject = 'New Build!'
     @body = 'body text'
     @options = {

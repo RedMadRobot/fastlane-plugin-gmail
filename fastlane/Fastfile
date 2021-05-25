@@ -3,6 +3,7 @@ lane :test do
     username: "user@gmail.com",
     password: "123",
     to: ["aaa@gmail.com", "bbb@gmail.com"],
+    cc: ["aaa@ya.ru"],
     subject: "New release",
     body: "issues ..."
   )
