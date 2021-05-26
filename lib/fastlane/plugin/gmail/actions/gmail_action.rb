@@ -26,6 +26,7 @@ module Fastlane
         Mail.deliver do
           from     params[:username]
           to       params[:to]
+          cc       params[:cc]
           subject  params[:subject]
           html_part do
             content_type 'text/html; charset=UTF-8'
@@ -80,6 +81,11 @@ module Fastlane
                                        verify_block: proc do |value|
                                          UI.user_error!("No recipients") if value.to_s.length == 0
                                        end),
+          FastlaneCore::ConfigItem.new(key: :cc,
+                                       env_name: "FL_GMAIL_CC",
+                                       description: "Mail cc recipients",
+                                       sensitive: true,
+                                       is_string: false),                             
           FastlaneCore::ConfigItem.new(key: :subject,
                                        env_name: "FL_GMAIL_SUBJECT",
                                        description: "The subject of the email",
