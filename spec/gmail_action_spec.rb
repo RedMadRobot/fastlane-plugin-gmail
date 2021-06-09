@@ -98,5 +98,19 @@ describe Fastlane::Actions::GmailAction do
         end").runner.execute(:test)
       end.to raise_error "No body of email"
     end
+
+    it 'no raises an error if no cc was given' do
+      expect do
+        result = Fastlane::FastFile.new.parse("lane :test do
+          gmail({
+            username: '#{@username}',
+            password: '#{@password}',
+            to:       '#{@to}',
+            subject:  '#{@subject}',
+            body:     '#{@body}'
+          })
+        end").runner.execute(:test)
+      end.not_to raise_error
+    end
   end
 end
